@@ -1,0 +1,144 @@
+.box {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    background-color: red;
+    animation-name: show;
+    /* }- animatsiya nomi!!! */
+    animation-duration: 2s;
+    /* }- 1s vaqt ichida bajaradi */
+    animation-delay: .5s;
+    /* }- 0.5s kutib keyin bajaradi */
+    animation-timing-function: linear;
+    /* }- ease-in -> sekin boshlab tez tugaydi */
+    /* }- ease -> tez boshlab sekin tugaydi */
+    /* }- linear -> birhillikda harakatlantiradi */
+    animation-iteration-count: unset;
+    /* }- 3  -> bunda 3 marotaba bajarilishi  */
+    /* }- infinite -> cheksiz takrorlanaveradi  */
+    /* animation-direction:  initial ; */
+    /* }-  alternate -> borib qaytibkeladi chapdan o'nga   */
+    /* }- alternate-reverse -> o'ngdan chapga   */
+    animation-fill-mode: forwards;
+    /* }- backwards -> borib sirazi asi joyida paydo bo'ladi */
+    /* }- foewards -> borgan joyida qoladi */
+}
+
+.wrapper-text {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 6rem;
+    /* padding-bottom: 100px; */
+    background-color: #6dcdeb;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+h1 {
+    font-size: 5rem;
+    animation: animation-text 1s linear .5s forwards;
+    opacity: 0;
+}
+
+h3 {
+    font-size: 3rem;
+    animation: animation-text 1s linear 1.5s forwards;
+    opacity: 0;
+}
+
+h6 {
+    font-size: 2rem;
+    animation: animation-text 1s linear 2.5s forwards;
+    opacity: 0;
+}
+
+.left-top-box {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    animation: boxes 1s linear 2.5s forwards;
+    top: 0;
+    opacity: 0;
+    left: 0;
+}
+
+.top-right-box {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: #000;
+    animation: boxes 1s linear 2.5s forwards;
+    top: 0;
+    opacity: 0;
+    right: 0;
+}
+
+.right-bottom-box {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    animation: boxes 1s linear 2.5s forwards;
+    right: 0;
+    opacity: 0;
+    bottom: 0;
+}
+
+.left-bottom-box {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: #000;
+    animation: boxes 1s linear 2.5s forwards;
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+}
+
+@keyframes animation-text {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+        /* color: aqua; */
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        color: #070755;
+    }
+}
+
+@keyframes boxes {
+    from {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
+
+    to {
+        opacity: 1;
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@keyframes show {
+    from {
+        transform: translateX(0);
+        opacity: 0;
+        display: none;
+        background-color: red;
+    }
+
+    to {
+        transform: translateX(100px);
+        opacity: 1;
+        display: block;
+        background-color: orange;
+    }
+}
